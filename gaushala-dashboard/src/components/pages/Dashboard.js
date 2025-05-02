@@ -779,7 +779,7 @@ const Dashboard = () => {
             <NavItem href="#">
               <TrendingIcon /> Analytics
             </NavItem>
-            <NavItem href="#">
+            <NavItem href="/settings">
               <SettingsIcon /> Settings
             </NavItem>
             <NavItem href="/login" style={{ marginTop: "auto" }}>
@@ -824,7 +824,7 @@ const Dashboard = () => {
                 <StatCardContent>
                   <StatLabel>Total Orders</StatLabel>
                   <StatValue>{totalOrders}</StatValue>
-                  </StatCardContent>
+                </StatCardContent>
                 <StatIcon>
                   <CartIcon />
                 </StatIcon>

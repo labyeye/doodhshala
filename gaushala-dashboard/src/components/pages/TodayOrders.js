@@ -383,9 +383,9 @@ const TodayOrders = () => {
             <NavItem href="#">
               <TrendingIcon /> Analytics
             </NavItem>
-            <NavItem href="#">
+            <NavItem href="/settings">
               <SettingsIcon /> Settings
-            </NavItem>
+            </NavItem>Tota
             <NavItem href="/login" style={{ marginTop: "auto" }}>
               <LogoutIcon /> Logout
             </NavItem>

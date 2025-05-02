@@ -29,6 +29,11 @@ const gaushalaSchema = new mongoose.Schema(
         evening: Number,
       },
     ],
+    photo: {
+      data: Buffer,
+      contentType: String,
+    }
+    
   },
   { timestamps: true }
 );
