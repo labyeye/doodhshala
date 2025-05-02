@@ -43,19 +43,18 @@ const MilkRideApp = ({navigation}) => {
     <View style={styles.productCard}>
       <View style={styles.productImageContainer}>
         <Image
-          source={
-            typeof item.photo === 'string' &&
-            item.photo.startsWith('data:image')
-              ? {uri: item.photo}
-              : {uri: 'https://cdn-icons-png.flaticon.com/512/2965/2965567.png'}
-          }
+          source={{
+            uri: `${BASE_URL}/api/gaushalas/${item._id}/photo`,
+          }}
           style={styles.productImage}
         />
       </View>
       <Text style={styles.productName} numberOfLines={1}>
         {item.gaushalaName}
       </Text>
-      <Text style={styles.productName} numberOfLines={1}>{item.address}</Text>
+      <Text style={styles.productName} numberOfLines={1}>
+        {item.address}
+      </Text>
       <Text style={styles.productPrice}>Milk: {item.milkCapacity}L</Text>
       <TouchableOpacity style={styles.addButton}>
         <Text style={styles.addButtonText}>Buy now</Text>
@@ -411,8 +410,8 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   productImage: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
     resizeMode: 'cover',
   },
   productName: {

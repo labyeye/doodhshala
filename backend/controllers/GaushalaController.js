@@ -85,7 +85,9 @@ exports.setTodayMilk = async (req, res) => {
 
     gaushala.milkToday = { morning, evening };
 
-    const existing = gaushala.milkAvailabilityHistory.find((d) => d.date === today);
+    const existing = gaushala.milkAvailabilityHistory.find(
+      (d) => d.date === today
+    );
     if (existing) {
       existing.morning = morning;
       existing.evening = evening;
@@ -96,7 +98,9 @@ exports.setTodayMilk = async (req, res) => {
     await gaushala.save();
     res.json({ message: "Milk updated", milkToday: gaushala.milkToday });
   } catch (err) {
-    res.status(500).json({ message: "Error updating milk", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Error updating milk", error: err.message });
   }
 };
 
@@ -105,7 +109,8 @@ exports.getMilkHistory = async (req, res) => {
     const gaushala = await Gaushala.findById(req.gaushala._id);
     res.json(gaushala.milkAvailabilityHistory || []);
   } catch (err) {
-    res.status(500).json({ message: "Error fetching milk history", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Error fetching milk history", error: err.message });
   }
 };
-
