@@ -55,6 +55,7 @@ const MilkRideApp = ({navigation}) => {
       <Text style={styles.productName} numberOfLines={1}>
         {item.gaushalaName}
       </Text>
+      <Text style={styles.productName} numberOfLines={1}>{item.address}</Text>
       <Text style={styles.productPrice}>Milk: {item.milkCapacity}L</Text>
       <TouchableOpacity style={styles.addButton}>
         <Text style={styles.addButtonText}>Buy now</Text>
@@ -398,7 +399,7 @@ const styles = StyleSheet.create({
     paddingRight: 8,
   },
   productCard: {
-    width: 120,
+    width: 160,
     marginRight: 12,
   },
   productImageContainer: {
